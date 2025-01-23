@@ -104,7 +104,7 @@ def train(batch_size, epochs):
     model = MinRNN(units=128, embedding_size=100, vocab_size=vocab_size, input_length=max_length)
 
     optimizer = optim.Adam(model.parameters(), lr=0.0001)
-    criterion = nn.BCELoss()   
+    criterion = nn.BCEWithLogitsLoss()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
 
