@@ -13,7 +13,6 @@ class MinRNN(nn.Module):
         self.classification_model = nn.Sequential(
             nn.Linear(units, 64),
             nn.Linear(64, 1),
-            nn.Sigmoid()
         )
 
     def forward(self, sentence):
